@@ -1,0 +1,27 @@
+name: Kamil Quality Guard
+
+on:
+  pull_request:
+    branches: [ "main" ] # Alleen scannen bij Pull Requests naar de main branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # De virtuele computer van GitHub
+
+    steps:
+      - uses: actions/checkout@v4 # Haalt de code op
+      
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm' # Zorgt dat de pipeline sneller is door dependencies te cachen
+
+      - name: Install dependencies
+        run: npm ci # Een 'schone' installatie specifiek voor pipelines
+
+      - name: Next.js Lint
+        run: npm run lint # Checkt op error's of linting issues in de code
+
+      - name: Next.js Build
+        run: npm run build # Laatste stap: builden van de website
