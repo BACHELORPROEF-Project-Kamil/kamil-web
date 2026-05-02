@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect } from "react";
+import Button from "./Button";
 
 const navLinks = [
 	{ name: "Home", href: "/" },
@@ -23,7 +24,7 @@ export default function Navbar() {
     }, [isOpen]);
 
     return (
-        <header className="fixed top-0 z-50 w-full">
+        <header className="sticky top-0 z-50 w-full">
             <nav className="relative z-50 w-full bg-background shadow-md px-6 py-4" aria-label="headnavigation">
                 <div className="mx-auto max-w-7xl flex items-center justify-between">
                     <Link href="/" className="group flex items-center gap-2">
@@ -44,12 +45,9 @@ export default function Navbar() {
                                 {link.name}
                             </NavLink>
                         ))}
-                        <Link 
-                            href="#" 
-                            className="bg-accent-orange text-white px-8 py-3 rounded-full font-accent-body font-body-bold text-base hover:opacity-90 transition-opacity"
-                        >
+                        <Button href="#">
                             Surf veilig met Kamil
-                        </Link>
+                        </Button>
                     </div>
 
                     {/* Menu knop */}
@@ -78,13 +76,13 @@ export default function Navbar() {
                             </li>
                         ))}
                         <li>
-                            <Link
-                                href="#"
+                            <Button 
+                                href="#" 
                                 onClick={() => setIsOpen(false)}
-                                className="bg-accent-orange text-white px-8 py-4 rounded-full font-accent-body text-xl font-body-bold hover:opacity-90 transition-opacity inline-block"
+                                className="text-xl px-10 py-4"
                             >
                                 Surf veilig met Kamil
-                            </Link>
+                            </Button>
                         </li>
                     </ul>
                 </div>
