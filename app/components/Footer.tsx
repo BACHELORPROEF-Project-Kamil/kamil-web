@@ -15,29 +15,29 @@ export default function Footer() {
 								height={40}
 							/>
 						</div>
-						<p className="text-sm color-body-white max-w-xs">
+						<p className="text-sm text-body-white max-w-xs">
 							Kamil is uw digitale kameleon: hij past zich aan en beschermt u onzichtbaar op de achtergrond.
 						</p>
 					</div>
 
 					<div>
-						<h4 className="font-body-bold text-body color-body-white mb-6">Handige links</h4>
+						<h4 className="font-body-bold text-body text-body-white mb-6">Handige links</h4>
 						<ul className="space-y-4">
 							<li>
-								<Link href="/" className="color-body-white hover:color-accent-orange">Home</Link>
+								<Link href="/" className="text-body-white hover:text-accent-orange transition-colors">Home</Link>
 							</li>
 							<li>
-								<Link href="/" className="color-body-white hover:color-accent-orange">Tips & Gids</Link>
+								<Link href="/" className="text-body-white hover:text-accent-orange transition-colors">Tips & Gids</Link>
 							</li>
 							<li>
-								<Link href="/" className="color-body-white hover:color-accent-orange">Download Kamil</Link>
+								<Link href="/" className="text-body-white hover:text-accent-orange transition-colors">Download Kamil</Link>
 							</li>
 						</ul>
 					</div>
 
 					{/* Contact */}
 					<div>
-						<h4 className="font-body-bold text-body color-body-white mb-6">Contact</h4>
+						<h4 className="font-body-bold text-body text-body-white mb-6">Contact</h4>
 						<ul className="space-y-4">
 							<li className="flex flex-col">
 								<span className="text-xs font-bold uppercase tracking-wider opacity-60">Naam</span>
@@ -49,7 +49,7 @@ export default function Footer() {
 							</li>
 							<li className="flex flex-col">
 								<span className="text-xs font-bold uppercase tracking-wider opacity-60">E-mail</span>
-								<a href="mailto:arno.baeck@student.ehb.be" className="hover:color-accent-orange">arno.baeck@student.ehb.be</a>
+								<a href="mailto:arno.baeck@student.ehb.be" className="hover:text-accent-orange transition-colors">arno.baeck@student.ehb.be</a>
 							</li>
 						</ul>
 					</div>
@@ -61,8 +61,8 @@ export default function Footer() {
 				<div className="max-w-7xl mx-auto flex flex-row justify-between items-center gap-4 text-xs">
 					<p>© {new Date().getFullYear()} Kamil. Alle rechten voorbehouden.</p>
 					<div className="flex gap-8">
-						<Link href="#" className="hover:color-accent-orange">Privacybeleid</Link>
-						<Link href="#" className="hover:color-accent-orange">Algemene voorwaarden</Link>
+						<Link href="#" className="hover:text-accent-orange transition-colors">Privacybeleid</Link>
+						<Link href="#" className="hover:text-accent-orange transition-colors">Algemene voorwaarden</Link>
 					</div>
 				</div>
 			</div>
