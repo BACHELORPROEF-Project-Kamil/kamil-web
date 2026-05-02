@@ -36,7 +36,6 @@ export default function Footer() {
 						</ul>
 					</div>
 
-					{/* Contact */}
 					<div className="text-center md:text-left">
 						<h4 className="font-body-bold text-body text-body-white mb-6">Contact</h4>
 						<ul className="space-y-4">
@@ -59,7 +58,6 @@ export default function Footer() {
 				</div>
 			</div>
 
-			{/* Legal Bar */}
 			<div className="w-full bg-black/10 border-t border-white/5 py-6 px-6">
 				<div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-center md:text-left">
 					<p>© {new Date().getFullYear()} Kamil. Alle rechten voorbehouden.</p>
