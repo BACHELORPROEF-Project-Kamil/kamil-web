@@ -40,6 +40,7 @@
 	--color-accent-orange: #ff805c;
 	--color-title-green: #054431;
 	--color-body-green: #2d6a4f;
+  --color-body-white: #ffffff;
 	--color-warning-background: #fffdea;
 	--color-warning-border: #ffc44f;
 
@@ -55,8 +56,9 @@
 	--font-weight-body-bold: 600;
 
 	/* Breakpoints */
-	--breakpoint-md: 768px;
-	--breakpoint-lg: 1100px;
+	--breakpoint-sm: 40rem;
+	--breakpoint-md: 48rem;
+	--breakpoint-lg: 68.75rem;
 
 	/* Font Sizes */
 	--text-base: 18px;
