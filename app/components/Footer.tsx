@@ -24,12 +24,12 @@ export default function Footer() {
 								</Link>
 							</li>
 							<li>
-								<Link href="/" className="text-body-white hover:text-accent-orange transition-colors">
+								<Link href="/tips-and-guides" className="text-body-white hover:text-accent-orange transition-colors">
 									Tips & Gids
 								</Link>
 							</li>
 							<li>
-								<Link href="/" className="text-body-white hover:text-accent-orange transition-colors">
+								<Link href="#" className="text-body-white hover:text-accent-orange transition-colors">
 									Download Kamil
 								</Link>
 							</li>

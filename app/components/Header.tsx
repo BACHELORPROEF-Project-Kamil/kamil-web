@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import Button from "./Button";
 
 export default function Header() {
 	return (
@@ -21,14 +21,12 @@ export default function Header() {
 						</p>
 					</div>
 					<div>
-						<Link
-							href="#"
-							className="bg-accent-orange text-white px-8 py-4 rounded-full font-body-bold text-lg hover:opacity-90 transition-opacity inline-block"
-						>
+						<Button href="#">
 							Bescherm mij gratis met Kamil
-						</Link>
+						</Button>
 						<p className="mt-4 text-sm text-body-green/80 italic">* Gratis & Veilig!</p>
 					</div>
+
 				</div>
 				<div className="flex-shrink-0 w-[300px] sm:w-[400px] md:w-[450px] lg:w-[550px]">
 					<Image
