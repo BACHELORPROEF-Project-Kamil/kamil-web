@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Button from "./Button";
 
 export default function Features() {
 	const features = [
@@ -34,12 +34,9 @@ export default function Features() {
 						Oplichters sturen u vaak naar valse websites om uw bankgegevens of wachtwoorden te stelen.{" "}
 						<strong>Kamil schermt dit voor u af.</strong>
 					</p>
-					<Link
-						href="#"
-						className="bg-accent-orange text-white px-8 py-4 rounded-full font-body-bold text-lg hover:opacity-90 transition-opacity inline-block"
-					>
+					<Button href="#">
 						Start met veilig surfen
-					</Link>
+					</Button>
 				</div>
 
 				<div className="flex-1 space-y-6 w-full">
