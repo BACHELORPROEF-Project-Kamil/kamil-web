@@ -1,13 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect } from "react";
+import Button from "./Button";
 
 const navLinks = [
 	{ name: "Home", href: "/" },
-	{ name: "Tips & Gids", href: "/tips-and-gids" },
+	{ name: "Tips & Gids", href: "/tips-and-guides" },
 ];
 
 export default function Navbar() {
@@ -33,18 +33,14 @@ export default function Navbar() {
 					{/* Desktop navigatie */}
 					<div className="hidden md:flex md:items-center md:gap-10 text-accent-green">
 						{navLinks.map((link) => (
-							<NavLink key={link.name} href={link.href}>
-								{link.name}
-							</NavLink>
+						    <NavLink key={link.name} href={link.href}>
+						        {link.name}
+						    </NavLink>
 						))}
-						<Link
-							href="#"
-							className="bg-accent-orange text-white px-6 py-3 rounded-full font-body-bold hover:opacity-90 transition-opacity"
-						>
-							Surf veilig met Kamil
-						</Link>
-					</div>
-
+						<Button href="#">
+						    Surf veilig met Kamil
+						</Button>
+						</div>
 					{/* Menu knop */}
 					<button
 						onClick={toggleMenu}
@@ -71,14 +67,15 @@ export default function Navbar() {
 							</li>
 						))}
 						<li>
-							<Link
-								href="#"
-								onClick={() => setIsOpen(false)}
-								className="bg-accent-orange text-white px-10 py-4 rounded-full font-body-bold text-xl hover:opacity-90 transition-opacity inline-block"
-							>
-								Surf veilig met Kamil
-							</Link>
+						    <Button 
+						        href="#" 
+						        onClick={() => setIsOpen(false)}
+						        className="text-xl"
+						    >
+						        Surf veilig met Kamil
+						    </Button>
 						</li>
+
 					</ul>
 				</div>
 			)}
