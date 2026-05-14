@@ -1,9 +1,20 @@
 ---
-title: "Pas op voor nep-pakketjes"
-description: "Phishing via SMS of e-mail over een pakket dat niet bezorgd kan worden."
-category: "PAKKETJES"
+title: "Titel 1"
+description: "Beschrijving"
+category: "CATEGORIE"
 icon: "📦"
-date: "2026-05-12"
+date: "DATUM PUBLICATIE"
 ---
 
-INHOUD
+INTRODUCTIE
+
+## 1. TITEL 1
+
+INHOUD ONDER TITEL 1
+
+> **Tip van Kamil**
+> "INHOUD TIP VAN KAMIL"
+
+## 2. TITEL 2
+
+INHOUD ONDER TITEL 2

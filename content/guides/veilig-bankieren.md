@@ -1,9 +1,20 @@
 ---
-title: "Veilig bankieren online"
-description: "Hoe herken je een valse inlogpagina van je bank?"
-category: "BANKZAKEN"
-icon: "🏦"
-date: "2026-05-12"
+title: "Titel 1"
+description: "Beschrijving"
+category: "CATEGORIE"
+icon: "📦"
+date: "DATUM PUBLICATIE"
 ---
 
-INHOUD
+INTRODUCTIE
+
+## 1. TITEL 1
+
+INHOUD ONDER TITEL 1
+
+> **Tip van Kamil**
+> "INHOUD TIP VAN KAMIL"
+
+## 2. TITEL 2
+
+INHOUD ONDER TITEL 2

@@ -1,9 +1,20 @@
 ---
-title: "Twee-factor authenticatie"
-description: "Waarom alleen een wachtwoord niet meer genoeg is voor je veiligheid."
-category: "WACHTWOORD"
-icon: "🛡️"
-date: "2026-05-12"
+title: "Titel 1"
+description: "Beschrijving"
+category: "CATEGORIE"
+icon: "📦"
+date: "DATUM PUBLICATIE"
 ---
 
-INHOUD
+INTRODUCTIE
+
+## 1. TITEL 1
+
+INHOUD ONDER TITEL 1
+
+> **Tip van Kamil**
+> "INHOUD TIP VAN KAMIL"
+
+## 2. TITEL 2
+
+INHOUD ONDER TITEL 2

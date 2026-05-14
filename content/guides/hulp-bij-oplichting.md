@@ -1,9 +1,20 @@
 ---
-title: "Wat te doen bij oplichting?"
-description: "Eerste hulp bij digitale fraude: stappen die je direct moet zetten."
-category: "HULP"
-icon: "🆘"
-date: "2026-05-12"
+title: "Titel 1"
+description: "Beschrijving"
+category: "CATEGORIE"
+icon: "📦"
+date: "DATUM PUBLICATIE"
 ---
 
-INHOUD
+INTRODUCTIE
+
+## 1. TITEL 1
+
+INHOUD ONDER TITEL 1
+
+> **Tip van Kamil**
+> "INHOUD TIP VAN KAMIL"
+
+## 2. TITEL 2
+
+INHOUD ONDER TITEL 2

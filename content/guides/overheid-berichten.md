@@ -1,9 +1,20 @@
 ---
-title: "Bericht van de overheid?"
-description: "Hoe weet je of een bericht van de Belastingdienst echt is?"
-category: "OVERHEID"
-icon: "🏛️"
-date: "2026-05-12"
+title: "Titel 1"
+description: "Beschrijving"
+category: "CATEGORIE"
+icon: "📦"
+date: "DATUM PUBLICATIE"
 ---
 
-INDHOUD
+INTRODUCTIE
+
+## 1. TITEL 1
+
+INHOUD ONDER TITEL 1
+
+> **Tip van Kamil**
+> "INHOUD TIP VAN KAMIL"
+
+## 2. TITEL 2
+
+INHOUD ONDER TITEL 2
