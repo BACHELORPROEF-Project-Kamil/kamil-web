@@ -14,6 +14,22 @@ export interface GuideData {
     content: string;
 }
 
+export function getGuideBySlug(slug: string): GuideData | null {
+    const fullPath = path.join(guidesDirectory, `${slug}.md`);
+    if (!fs.existsSync(fullPath)) {
+        return null;
+    }
+
+    const fileContents = fs.readFileSync(fullPath, "utf8");
+    const matterResult = matter(fileContents);
+
+    return {
+        slug,
+        content: matterResult.content,
+        ...(matterResult.data as { title: string; description: string; category: string; icon?: string; date: string }),
+    };
+}
+
 export function getAllGuides(): GuideData[] {
     if (!fs.existsSync(guidesDirectory)) {
         return [];

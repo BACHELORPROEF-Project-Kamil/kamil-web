@@ -16,6 +16,9 @@ Hieronder vind je een overzicht van de gebruikte bronnen, tools en inspiratie vo
 *   [Next.js Documentation](https://nextjs.org/docs) - Framework guides & API references.
 *   [Tailwind CSS](https://tailwindcss.com/docs) - Styling & utility class references.
 *   [NOG AANPASSEN](https://www.npmjs.com/package/gray-matter) - NOG TOEVOEGEN
+*   [NOG AANPASSEN](https://www.npmjs.com/package/react-markdown) - NOG TOEVOEGEN
+*   [NOG AANPASSEN](https://www.npmjs.com/package/remark-gfm) - NOG TOEVOEGEN
+
 
 ### Design & Assets
 *   **Fonts:** [Outfit](https://fonts.google.com/specimen/Outfit) & [Open Sans](https://fonts.google.com/specimen/Open+Sans) via Google Fonts.
