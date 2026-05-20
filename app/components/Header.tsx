@@ -4,7 +4,7 @@ import Button from "./Button";
 export default function Header() {
 	return (
 		<section className="w-full bg-accent-background">
-			<div className="max-w-7xl mx-auto py-20 px-6 flex flex-col-reverse items-center gap-12 text-center md:flex-row md:text-left">
+			<div className="max-w-7xl mx-auto py-24 px-6 flex flex-col-reverse items-center gap-12 text-center md:flex-row md:text-left">
 				<div className="flex-1 space-y-6">
 					<div className="max-w-xl">
 						<h1 className="mb-4">
