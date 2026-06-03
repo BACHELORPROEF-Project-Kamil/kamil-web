@@ -3,9 +3,8 @@
 import { useEffect, useState } from "react";
 
 interface StatsData {
-	total_checks: number;
-	total_warnings: number;
-	total_users: number;
+	totalUrlsChecked: number;
+	totalChecksPerformed: number;
 }
 
 export default function StatsCounter() {
@@ -15,21 +14,17 @@ export default function StatsCounter() {
 	useEffect(() => {
 		async function fetchStats() {
 			try {
-				const response = await fetch("http://localhost:5001/api/v1/stats/global-stats");
+				const response = await fetch("http://localhost:5001/api/stats/global");
 				if (!response.ok) {
 					throw new Error(`HTTP error! status: ${response.status}`);
 				}
 				const json = await response.json();
-				if (json.status === "success") {
-					setStats(json.data);
-				}
+				setStats(json.data || json);
 			} catch (error) {
 				console.error("Error fetching stats:", error);
-				// Set fallback data if fetch fails
 				setStats({
-					total_checks: 12543,
-					total_warnings: 842,
-					total_users: 5210
+					totalUrlsChecked: 1032,
+					totalChecksPerformed: 8932,
 				});
 			} finally {
 				setLoading(false);
@@ -42,17 +37,15 @@ export default function StatsCounter() {
 	if (loading) return null;
 
 	const displayStats = stats || {
-		total_checks: 0,
-		total_warnings: 0,
-		total_users: 0
+		totalUrlsChecked: 0,
+		totalChecksPerformed: 0,
 	};
 
 	return (
 		<div className="max-w-7xl mx-auto px-6">
 			<div className="bg-accent-background rounded-[40px] p-8 md:p-12 border border-accent-green-border/10 relative overflow-hidden">
-				{/* Decoratieve achtergrond elementen */}
 				<div className="absolute top-0 right-0 w-64 h-64 bg-accent-green-border/5 rounded-full -mr-20 -mt-20 blur-3xl" />
-				
+
 				<div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
 					<div className="space-y-4 text-center md:text-left">
 						<span className="inline-block px-4 py-1.5 bg-accent-green/10 rounded-full text-accent-green text-sm font-bold tracking-wider uppercase">
@@ -66,23 +59,16 @@ export default function StatsCounter() {
 					<div className="flex flex-wrap justify-center md:justify-end gap-8 md:gap-16">
 						<div className="text-center space-y-1">
 							<div className="text-4xl md:text-5xl font-black text-accent-green tabular-nums">
-								{displayStats.total_checks.toLocaleString()}
+								{displayStats.totalUrlsChecked.toLocaleString()}
 							</div>
-							<div className="text-sm font-bold text-body-green/60 uppercase tracking-widest">Controles</div>
-						</div>
-						
-						<div className="text-center space-y-1">
-							<div className="text-4xl md:text-5xl font-black text-title-green tabular-nums">
-								{displayStats.total_warnings.toLocaleString()}
-							</div>
-							<div className="text-sm font-bold text-body-green/60 uppercase tracking-widest">Blokkades</div>
+							<div className="text-sm font-bold text-body-green/60 uppercase tracking-widest">Websites gecontroleerd</div>
 						</div>
 
 						<div className="text-center space-y-1">
 							<div className="text-4xl md:text-5xl font-black text-title-green tabular-nums">
-								{displayStats.total_users.toLocaleString()}
+								{displayStats.totalChecksPerformed.toLocaleString()}
 							</div>
-							<div className="text-sm font-bold text-body-green/60 uppercase tracking-widest">Gebruikers</div>
+							<div className="text-sm font-bold text-body-green/60 uppercase tracking-widest">Controles uitgevoerd</div>
 						</div>
 					</div>
 				</div>
