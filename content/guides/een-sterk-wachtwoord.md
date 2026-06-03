@@ -1,20 +1,29 @@
 ---
-title: "Een sterk wachtwoord: Zo simpel kan het zijn"
+title: "Een sterk wachtwoord: Zo simpel kan het eigenlijk zijn"
 description: "Ontdek hoe u een wachtwoord maakt dat makkelijk te onthouden is, maar onmogelijk te raden."
 category: "WACHTWOORD"
 icon: "🔑"
-date: "2026-05-14"
+date: "2026-06-03"
 ---
 
-Veel mensen denken dat een sterk wachtwoord een ingewikkelde reeks van tekens moet zijn. Maar voor een computer is een lang wachtwoord veel moeilijker te kraken dan een kort, ingewikkeld wachtwoord.
+Veel mensen ervaren stress bij het bedenken van een nieuw wachtwoord. We denken vaak dat een sterk wachtwoord een onmogelijke, ingewikkelde reeks van willekeurige tekens, cijfers en vreemde symbolen moet zijn, zoals "Xq9#pL2!z". Dit soort wachtwoorden zijn voor mensen enorm lastig te onthouden, waardoor we ze vaak opschrijven op briefjes die kwijt kunnen raken.
 
-## 1. De kracht van de wachtzin
+Wat veel mensen echter niet weten, is dat voor een computer een *lang* wachtwoord vele malen moeilijker te kraken is dan een *kort, ingewikkeld* wachtwoord.
 
-In plaats van één woord, kunt u beter een korte zin gebruiken. Denk aan iets geks zoals "DeBlauweKoffiePot2026!". Het is voor u makkelijk te onthouden als beeld, maar voor een kwaadwillende computer duurt het eeuwen om dit te raden.
+## 1. De verrassende kracht van de wachtzin
+
+In plaats van één kort en complex woord te verzinnen, kunt u veel beter een korte zin gebruiken: de zogeheten 'wachtzin'. Denk bijvoorbeeld aan iets persoonlijks of gewoon iets geks, zoals: 
+"DeBlauweKoffiePotStaatInDeTuin!". 
+
+Voor u is dit relatief makkelijk te onthouden omdat u er een beeld bij kunt bedenken. Maar voor een kwaadwillende computer, die miljarden combinaties per seconde probeert, duurt het letterlijk miljoenen jaren om deze lange zin te raden. Hoe meer karakters (letters, spaties of tekens), hoe exponentieel veiliger het wachtwoord wordt.
 
 > **Tip van Kamil**
-> "Gebruik geen namen van kinderen, kleinkinderen of huisdieren. Criminelen kunnen deze informatie vaak simpel vinden via sociale media. Kies liever een zin die alleen u kent!"
+> "Gebruik in uw wachtzin geen voor de hand liggende persoonlijke informatie, zoals namen van kinderen, kleinkinderen, uw eigen geboortedatum of de naam van uw huisdier. Criminelen kunnen deze informatie vaak verrassend eenvoudig vinden via uw sociale media. Kies liever een onzinnige zin die echt alleen u kent!"
 
-## 2. Waarom Kamil meekijkt
+## 2. Hergebruik is het grootste gevaar
 
-Kamil helpt u door u te waarschuwen wanneer u op een onveilige website bent waar u uw wachtwoord liever niet invult. Door de echtheid van de site te controleren, zorgen we dat uw geheime zin ook echt geheim blijft.
+Een sterk wachtwoord of wachtzin is uitstekend, maar u mag deze **nooit** voor meerdere websites gebruiken. Als een website waar u winkelt wordt gehackt, proberen criminelen uw wachtwoord direct uit op uw e-mailadres en bank. Zorg daarom dat uw belangrijkste accounts (zoals uw e-mail, DigiD en bank) allemaal een uniek wachtwoord hebben. Een wachtwoordmanager kan u hierbij enorm helpen door deze ingewikkelde zinnen voor u te onthouden.
+
+## 3. Waarom Kamil meekijkt op de achtergrond
+
+Zelfs het allersterkste wachtwoord biedt geen bescherming als u het zelf overhandigt aan een oplichter op een valse website (phishing). Kamil helpt u door u actief te waarschuwen wanneer u op een onveilige, nagemaakte website bent aanbeland waar u uw wachtwoord absoluut niet moet invullen. Door de echtheid en veiligheid van de website te verifiëren vóórdat u gaat typen, zorgen we er samen voor dat uw geheime wachtzin ook écht geheim blijft.

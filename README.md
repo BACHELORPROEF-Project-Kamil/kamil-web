@@ -21,6 +21,7 @@ Hieronder vind je een overzicht van de gebruikte bronnen, tools en inspiratie vo
 *   [NOG AANPASSEN](https://gemini.google.com/share/8d7d7e1e729b) - NOG TOEVOEGEN
 *   [NOG AANPASSEN](LINK_GOOGLE_CLI) - NOG TOEVOEGEN
 *   [NOG AANPASSEN](LINK_GITHUB_COPILOT) - NOG TOEVOEGEN
+*   [NOG AANPASSEN](BESTAND_GEMINI_CLI_CHAT_GUIDES) - NOG TOEVOEGEN
 
 
 ### Design & Assets
