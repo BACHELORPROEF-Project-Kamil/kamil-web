@@ -22,6 +22,11 @@ export default async function GuideDetailPage({ params }: PageProps) {
         .filter((g) => g.slug !== slug && g.category === guide.category)
         .slice(0, 2);
 
+    const baseUrl = "http://localhost:3000";
+    const fullUrl = encodeURIComponent(`${baseUrl}/tips-and-guides/gids/${slug}`);
+    const shareMessage = encodeURIComponent("Check deze gids: ");
+    const whatsappLink = `https://wa.me/?text=${shareMessage}${fullUrl}`;
+
     const toc = guide.content
         .split("\n")
         .filter((line) => line.startsWith("## "))
@@ -101,8 +106,9 @@ export default async function GuideDetailPage({ params }: PageProps) {
 
                         <div className="mt-12 pt-8 border-t border-accent-background flex items-center gap-6 text-xs font-bold uppercase tracking-widest text-accent-green/40">
                             <span>Deel dit:</span>
-                            <Link href="#" className="hover:text-accent-orange transition-colors">Facebook</Link>
-                            <Link href="#" className="hover:text-accent-orange transition-colors">LinkedIn</Link>
+                            <Link href={whatsappLink} target="_blank" className="hover:text-accent-orange transition-colors">
+                                WhatsApp
+                            </Link>
                         </div>
                     </main>
 
