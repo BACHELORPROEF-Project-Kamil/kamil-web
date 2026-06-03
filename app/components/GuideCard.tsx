@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { GuideData } from "../lib/guides";
+import { GuideData } from "../lib/guideLoader";
 
 export default function GuideCard({ guide }: { guide: GuideData }) {
     return (

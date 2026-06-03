@@ -1,4 +1,4 @@
-import { getGuideBySlug, getAllGuides } from "@/app/lib/guides";
+import { getGuideBySlug, getAllGuides } from "@/app/lib/guideLoader";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";

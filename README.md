@@ -1,4 +1,4 @@
-# kamil-web | Bachelor Thesis Project
+# kamil-web | Bachelor Proef
 
 Dit is de repository voor de website van mijn bachelorproef aan de Erasmushogeschool Brussel (Multimedia & Creative Technologie).
 
@@ -18,6 +18,9 @@ Hieronder vind je een overzicht van de gebruikte bronnen, tools en inspiratie vo
 *   [NOG AANPASSEN](https://www.npmjs.com/package/gray-matter) - NOG TOEVOEGEN
 *   [NOG AANPASSEN](https://www.npmjs.com/package/react-markdown) - NOG TOEVOEGEN
 *   [NOG AANPASSEN](https://www.npmjs.com/package/remark-gfm) - NOG TOEVOEGEN
+*   [NOG AANPASSEN](https://gemini.google.com/share/8d7d7e1e729b) - NOG TOEVOEGEN
+*   [NOG AANPASSEN](LINK_GOOGLE_CLI) - NOG TOEVOEGEN
+*   [NOG AANPASSEN](LINK_GITHUB_COPILOT) - NOG TOEVOEGEN
 
 
 ### Design & Assets
