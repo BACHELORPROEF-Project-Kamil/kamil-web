@@ -15,7 +15,7 @@ export default function StatsCounter() {
 	useEffect(() => {
 		async function fetchStats() {
 			try {
-				const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5001";
+				const apiUrl = (process.env.NEXT_PUBLIC_API_URL || "http://localhost:5001").replace(/\/$/, "");
 				const response = await fetch(`${apiUrl}/api/stats/global`);
 				if (!response.ok) {
 					throw new Error(`HTTP error! status: ${response.status}`);

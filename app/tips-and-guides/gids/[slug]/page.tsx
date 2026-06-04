@@ -22,7 +22,7 @@ export default async function GuideDetailPage({ params }: PageProps) {
         .filter((g) => g.slug !== slug && g.category === guide.category)
         .slice(0, 2);
 
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+    const baseUrl = (process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000").replace(/\/$/, "");
     const fullUrl = encodeURIComponent(`${baseUrl}/tips-and-guides/gids/${slug}`);
     const shareMessage = encodeURIComponent("Check deze gids: ");
     const whatsappLink = `https://wa.me/?text=${shareMessage}${fullUrl}`;
