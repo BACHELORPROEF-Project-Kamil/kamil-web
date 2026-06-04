@@ -1,7 +1,6 @@
 import Header from "@/app/components/Header";
 import Features from "@/app/components/Features";
 import StatsCounter from "@/app/components/StatsCounter";
-import Footer from "@/app/components/Footer";
 
 export default function Home() {
 	return (
