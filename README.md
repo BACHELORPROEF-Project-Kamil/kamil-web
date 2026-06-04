@@ -90,6 +90,7 @@ This is the repository for the website of my bachelor's thesis at **Erasmushoges
 * [GitHub Copilot](https://github.com/copilot) - AI pair programmer for rapid prototyping.
 * [Markdown Generation](./AI_CHATS/guides_genereren.md) - Documentation on automated guide content generation.
 * [Readme Generation](./AI_CHATS/readme_generation.md) - Documentation on AI-assisted documentation management.
+* [Project cleanup](./AI_CHATS/project_cleanup.md) - Documentation on cleanup for deployment.
 
 ### 🎨 Design & Assets
 * [Google Fonts](https://fonts.google.com/) - Source for [Outfit](https://fonts.google.com/specimen/Outfit) & [Open Sans](https://fonts.google.com/specimen/Open+Sans).
