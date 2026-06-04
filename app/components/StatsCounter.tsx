@@ -14,14 +14,14 @@ export default function StatsCounter() {
 	useEffect(() => {
 		async function fetchStats() {
 			try {
-				const response = await fetch("http://localhost:5001/api/stats/global");
+				const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5001";
+				const response = await fetch(`${apiUrl}/api/stats/global`);
 				if (!response.ok) {
 					throw new Error(`HTTP error! status: ${response.status}`);
 				}
 				const json = await response.json();
 				setStats(json.data || json);
-			} catch (error) {
-				console.error("Error fetching stats:", error);
+			} catch {
 				setStats({
 					totalUrlsChecked: 1032,
 					totalChecksPerformed: 8932,

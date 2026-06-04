@@ -23,7 +23,7 @@ function parseFrontmatter(fileContents: string) {
 
 	const yamlBlock = match[1];
 	const content = match[2];
-	const data: any = {};
+	const data: Record<string, string> = {};
 
 	yamlBlock.split("\n").forEach((line) => {
 		const colonIndex = line.indexOf(":");
