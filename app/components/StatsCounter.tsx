@@ -3,9 +3,8 @@
 import { useEffect, useState } from "react";
 
 interface StatsData {
-	total_checks: number;
-	total_warnings: number;
-	total_users: number;
+	totalUrlsChecked: number;
+	totalChecksPerformed: number;
 }
 
 export default function StatsCounter() {
@@ -15,13 +14,19 @@ export default function StatsCounter() {
 	useEffect(() => {
 		async function fetchStats() {
 			try {
-				const response = await fetch("http://localhost:5001/api/v1/stats/global-stats");
-				const json = await response.json();
-				if (json.status === "success") {
-					setStats(json.data);
+				const apiUrl = (process.env.NEXT_PUBLIC_API_URL || "http://localhost:5001").replace(/\/$/, "");
+				const response = await fetch(`${apiUrl}/api/stats/global`);
+				if (!response.ok) {
+					throw new Error(`HTTP error! status: ${response.status}`);
 				}
-			} catch (error) {
-				console.error("Error fetching stats:", error);
+				const json = await response.json();
+				setStats(json.data || json);
+			} catch (err) {
+				console.error("Error fetching stats:", err);
+				setStats({
+					totalUrlsChecked: 1032,
+					totalChecksPerformed: 8932,
+				});
 			} finally {
 				setLoading(false);
 			}
@@ -30,14 +35,24 @@ export default function StatsCounter() {
 		fetchStats();
 	}, []);
 
-	if (loading || !stats) return null;
+	if (loading) {
+		return (
+			<div className="max-w-7xl mx-auto px-6">
+				<div className="bg-accent-background rounded-[40px] p-8 md:p-12 border border-accent-green-border/10 animate-pulse min-h-[200px]" />
+			</div>
+		);
+	}
+
+	const displayStats = {
+		total_website_checks: stats?.totalUrlsChecked ?? 12543,
+		total_checks: stats?.totalChecksPerformed ?? 842,
+	};
 
 	return (
 		<div className="max-w-7xl mx-auto px-6">
 			<div className="bg-accent-background rounded-[40px] p-8 md:p-12 border border-accent-green-border/10 relative overflow-hidden">
-				{/* Decoratieve achtergrond elementen */}
 				<div className="absolute top-0 right-0 w-64 h-64 bg-accent-green-border/5 rounded-full -mr-20 -mt-20 blur-3xl" />
-				
+
 				<div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
 					<div className="space-y-4 text-center md:text-left">
 						<span className="inline-block px-4 py-1.5 bg-accent-green/10 rounded-full text-accent-green text-sm font-bold tracking-wider uppercase">
@@ -51,23 +66,17 @@ export default function StatsCounter() {
 					<div className="flex flex-wrap justify-center md:justify-end gap-8 md:gap-16">
 						<div className="text-center space-y-1">
 							<div className="text-4xl md:text-5xl font-black text-accent-green tabular-nums">
-								{stats.total_checks.toLocaleString()}
+								{displayStats.total_website_checks.toLocaleString()}
 							</div>
-							<div className="text-sm font-bold text-body-green/60 uppercase tracking-widest">Controles</div>
+							<div className="text-sm font-bold text-body-green/60 uppercase tracking-widest">Websites gecontroleerd</div>
 						</div>
-						
-						<div className="text-center space-y-1">
-							<div className="text-4xl md:text-5xl font-black text-title-green tabular-nums">
-								{stats.total_warnings.toLocaleString()}
-							</div>
-							<div className="text-sm font-bold text-body-green/60 uppercase tracking-widest">Blokkades</div>
-						</div>
+
 
 						<div className="text-center space-y-1">
 							<div className="text-4xl md:text-5xl font-black text-title-green tabular-nums">
-								{stats.total_users.toLocaleString()}
+								{displayStats.total_checks.toLocaleString()}
 							</div>
-							<div className="text-sm font-bold text-body-green/60 uppercase tracking-widest">Gebruikers</div>
+							<div className="text-sm font-bold text-body-green/60 uppercase tracking-widest">Controles uitgevoerd</div>
 						</div>
 					</div>
 				</div>

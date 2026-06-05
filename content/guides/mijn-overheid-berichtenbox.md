@@ -3,20 +3,29 @@ title: "De digitale brievenbus: Uw veilige haven voor overheidspost"
 description: "Waarom de digitale brievenbus de enige plek is waar u overheidsinformatie echt moet vertrouwen."
 category: "OVERHEID"
 icon: "📩"
-date: "2026-05-14"
+date: "2026-06-03"
 ---
 
-De veiligste manier om met de overheid te communiceren is via uw digitale brievenbus op uw overheidsportaal (zoals MijnOverheid of Mijn Burgerprofiel). Dit is een afgesloten systeem waar oplichters niet bij kunnen.
+Vroeger kregen we alle post van de Belastingdienst, het UWV of de gemeente keurig in een blauwe of witte envelop op de deurmat. Tegenwoordig communiceren deze instanties steeds vaker digitaal. De veiligste manier om met de overheid te communiceren is via uw persoonlijke digitale brievenbus, zoals MijnOverheid (Nederland) of Mijn Burgerprofiel (België). Dit is een beveiligd, afgesloten systeem waar oplichters van buitenaf niet zomaar bij kunnen.
 
-## 1. E-mail als notificatie, niet als brief
+## 1. E-mail is slechts een notificatie, geen brief
 
-Als er nieuwe post voor u is, krijgt u een e-mail van uw overheidsportaal (zoals MijnOverheid of Mijn Burgerprofiel). In deze mail staat nooit de inhoud van het bericht en ook geen directe link naar het document. Er staat alleen dat u moet inloggen op de website.
+Het belangrijkste om te onthouden over uw digitale brievenbus is hoe de overheid u op de hoogte stelt:
+- Als er daadwerkelijk een belangrijk document voor u klaarstaat in uw digitale brievenbus, krijgt u in uw 'gewone' e-mail (zoals Gmail of Outlook) uitsluitend een **herinnering** (notificatie). 
+- In deze herinnerings-e-mail staat nóóit direct de inhoud van het bericht. Er staat niet over welke bedragen het gaat.
+- Er is in deze e-mail ook nóóit een bijlage (zoals een PDF-bestand) toegevoegd die u direct moet openen.
+- Er staat in de e-mail uitsluitend het verzoek om zelf in te loggen op het overheidsportaal.
 
 > **Tip van Kamil**
-> "Door Kamil te gebruiken, wordt u beschermd tegen websites die uw digitale brievenbus proberen na te maken. Ik zie het verschil tussen de echte mijn.overheid.nl of .be en een slimme kopie!"
+> "Krijgt u een e-mail over een nieuw bericht in uw digitale brievenbus? Vertrouw nooit op een linkje in die e-mail! Open altijd zelf uw browser en typ de naam van het portaal, zoals `mijn.overheid.nl`, zelf in. Zo weet u zeker dat u niet op een nagemaakte website belandt."
 
-## 2. Bullet points voor veiligheid
+## 2. Praktische waarschuwingen (Vuistregels)
 
-* Krijgt u een mail met een bijlage namens de overheid? Open deze nooit.
-* Wordt u in een mail gevraagd om op een knop te drukken om een document te lezen? Doe dit niet.
-* Ga altijd handmatig naar de website van uw overheidsportaal.
+Als u berichten ontvangt die zogenaamd van uw digitale brievenbus komen, let dan op de volgende rode vlaggen:
+* Krijgt u een mail met een bijlage (vaak .pdf of .zip) namens de overheid? Open deze nooit, dit kan een virus zijn.
+* Wordt u in een mail of SMS dwingend verzocht om op een knop te drukken om "uw belastingteruggave direct te claimen" of "een boete te betalen"? Doe dit niet, dit is altijd phishing.
+* Let op taalfouten of een vreemde, onpersoonlijke aanhef.
+
+## 3. Hoe Kamil op de achtergrond beveiligt
+
+Criminelen worden steeds handiger in het namaken van overheidswebsites. Ze bouwen het inlogscherm na zodat het exact lijkt op dat van DigiD of itsme. Als u onverhoopt toch op een foute link in een e-mail klikt, treedt de AI van Kamil in werking. Kamil scant de structuur van de pagina en waarschuwt direct als het domein niet klopt of zeer recent is geregistreerd. Zo blijft uw digitale brievenbus daadwerkelijk een veilige haven.

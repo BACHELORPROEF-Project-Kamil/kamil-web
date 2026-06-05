@@ -1,4 +1,4 @@
-import { getGuideBySlug, getAllGuides } from "@/app/lib/guides";
+import { getGuideBySlug, getAllGuides } from "@/app/lib/guideLoader";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
@@ -21,6 +21,11 @@ export default async function GuideDetailPage({ params }: PageProps) {
     const relatedGuides = allGuides
         .filter((g) => g.slug !== slug && g.category === guide.category)
         .slice(0, 2);
+
+    const baseUrl = (process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000").replace(/\/$/, "");
+    const fullUrl = encodeURIComponent(`${baseUrl}/tips-and-guides/gids/${slug}`);
+    const shareMessage = encodeURIComponent("Check deze gids: ");
+    const whatsappLink = `https://wa.me/?text=${shareMessage}${fullUrl}`;
 
     const toc = guide.content
         .split("\n")
@@ -74,15 +79,15 @@ export default async function GuideDetailPage({ params }: PageProps) {
                             <ReactMarkdown
                                 remarkPlugins={[remarkGfm]}
                                 components={{
-                                    h2: ({ node, ...props }) => {
+                                    h2: ({ ...props }) => {
                                         const text = props.children?.toString() || "";
                                         const match = text.match(/^(\d+)\./);
                                         const id = match ? `section-${match[1]}` : undefined;
                                         return <h2 id={id} className="text-3xl font-bold mt-12 mb-6" {...props} />;
                                     },
-                                    p: ({ node, ...props }) => <p className="mb-6 leading-relaxed" {...props} />,
-                                    ul: ({ node, ...props }) => <ul className="list-disc pl-6 mb-8 space-y-2" {...props} />,
-                                    blockquote: ({ node, ...props }) => (
+                                    p: ({ ...props }) => <p className="mb-6 leading-relaxed" {...props} />,
+                                    ul: ({ ...props }) => <ul className="list-disc pl-6 mb-8 space-y-2" {...props} />,
+                                    blockquote: ({ ...props }) => (
                                         <div className="bg-[#FFF8D1] border border-[#FFEA7D] rounded-2xl p-8 my-10 relative overflow-hidden">
                                             <div className="flex items-center gap-3 mb-4">
                                                 <span className="text-xl">💡</span>
@@ -101,8 +106,9 @@ export default async function GuideDetailPage({ params }: PageProps) {
 
                         <div className="mt-12 pt-8 border-t border-accent-background flex items-center gap-6 text-xs font-bold uppercase tracking-widest text-accent-green/40">
                             <span>Deel dit:</span>
-                            <Link href="#" className="hover:text-accent-orange transition-colors">Facebook</Link>
-                            <Link href="#" className="hover:text-accent-orange transition-colors">LinkedIn</Link>
+                            <Link href={whatsappLink} target="_blank" className="hover:text-accent-orange transition-colors">
+                                WhatsApp
+                            </Link>
                         </div>
                     </main>
 
