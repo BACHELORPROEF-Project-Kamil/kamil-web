@@ -44,9 +44,8 @@ export default function StatsCounter() {
 	}
 
 	const displayStats = {
-		total_checks: stats?.total_checks ?? 12543,
-		total_warnings: stats?.total_warnings ?? 842,
-		total_users: stats?.total_users ?? 5210,
+		total_website_checks: stats?.totalUrlsChecked ?? 12543,
+		total_checks: stats?.totalChecksPerformed ?? 842,
 	};
 
 	return (
@@ -67,7 +66,7 @@ export default function StatsCounter() {
 					<div className="flex flex-wrap justify-center md:justify-end gap-8 md:gap-16">
 						<div className="text-center space-y-1">
 							<div className="text-4xl md:text-5xl font-black text-accent-green tabular-nums">
-								{displayStats.totalUrlsChecked.toLocaleString()}
+								{displayStats.total_website_checks.toLocaleString()}
 							</div>
 							<div className="text-sm font-bold text-body-green/60 uppercase tracking-widest">Websites gecontroleerd</div>
 						</div>
@@ -75,7 +74,7 @@ export default function StatsCounter() {
 
 						<div className="text-center space-y-1">
 							<div className="text-4xl md:text-5xl font-black text-title-green tabular-nums">
-								{displayStats.totalChecksPerformed.toLocaleString()}
+								{displayStats.total_checks.toLocaleString()}
 							</div>
 							<div className="text-sm font-bold text-body-green/60 uppercase tracking-widest">Controles uitgevoerd</div>
 						</div>
