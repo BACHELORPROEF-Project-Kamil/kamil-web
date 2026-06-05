@@ -72,6 +72,7 @@ export default function StatsCounter() {
 							<div className="text-sm font-bold text-body-green/60 uppercase tracking-widest">Websites gecontroleerd</div>
 						</div>
 
+
 						<div className="text-center space-y-1">
 							<div className="text-4xl md:text-5xl font-black text-title-green tabular-nums">
 								{displayStats.totalChecksPerformed.toLocaleString()}
