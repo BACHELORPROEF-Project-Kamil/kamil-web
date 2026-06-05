@@ -6,6 +6,9 @@ import Footer from "@/app/components/Footer";
 export const metadata: Metadata = {
   title: "Kamil - Uw digitale kameleon",
   description: "Kamil beschermt u onzichtbaar op de achtergrond terwijl u surft.",
+  icons: {
+    icon: "/images/favicon.png",
+  },
 };
 
 export default function RootLayout({
