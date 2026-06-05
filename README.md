@@ -98,6 +98,10 @@ This is the repository for the website of my bachelor's thesis at **Erasmushoges
 * [Lucide Icons](https://lucide.dev/) - Reference for consistent and accessible iconography.
 * [Coolors](https://coolors.co/) - Color theory research and palette generation.
 
+### 🏭 Hosting
+* [Domain name](https://combell.be) - Domain name provider.
+* [Host](https://vercel.com) - Hosting provider.
+
 ---
 
 ## 📄 License
