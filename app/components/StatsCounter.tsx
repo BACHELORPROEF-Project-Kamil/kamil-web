@@ -27,7 +27,7 @@ export default function StatsCounter() {
 				setStats({
 					total_checks: 12543,
 					total_warnings: 842,
-					total_users: 5210
+					total_users: 5210,
 				});
 			} finally {
 				setLoading(false);
@@ -74,14 +74,14 @@ export default function StatsCounter() {
 							</div>
 							<div className="text-sm font-bold text-body-green/60 uppercase tracking-widest">Controles</div>
 						</div>
-						
+
 						<div className="text-center space-y-1">
 							<div className="text-4xl md:text-5xl font-black text-title-green tabular-nums">
 								{displayStats.total_warnings.toLocaleString()}
 							</div>
 							<div className="text-sm font-bold text-body-green/60 uppercase tracking-widest">Blokkades</div>
 						</div>
-
+						
 						<div className="text-center space-y-1">
 							<div className="text-4xl md:text-5xl font-black text-title-green tabular-nums">
 								{displayStats.total_users.toLocaleString()}
