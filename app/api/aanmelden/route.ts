@@ -10,6 +10,7 @@ import {
 	notificatieAanmeldingHtml,
 	notificatieAanmeldingText,
 } from "@/lib/emails/notificatie-aanmelding";
+import { generateUnsubscribeToken } from "@/lib/unsubscribeToken";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -22,14 +23,22 @@ export async function POST(req: NextRequest) {
 
 	const from = process.env.RESEND_FROM!;
 	const notify = process.env.RESEND_NOTIFY!;
+	const baseUrl = process.env.NEXT_PUBLIC_BASE_URL!;
+
+	const token = generateUnsubscribeToken(email);
+	const unsubscribeUrl = `${baseUrl}/afmelden?token=${token}`;
 
 	const [bevestiging, notificatie] = await Promise.allSettled([
 		resend.emails.send({
 			from,
 			to: email,
 			subject: bevestigingAanmeldingSubject,
-			html: bevestigingAanmeldingHtml(naam),
-			text: bevestigingAanmeldingText(naam),
+			html: bevestigingAanmeldingHtml(naam, unsubscribeUrl),
+			text: bevestigingAanmeldingText(naam, unsubscribeUrl),
+			headers: {
+				"List-Unsubscribe": `<${unsubscribeUrl}>`,
+				"List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
+			},
 		}),
 		resend.emails.send({
 			from,

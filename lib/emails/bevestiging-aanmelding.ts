@@ -1,6 +1,6 @@
 export const bevestigingAanmeldingSubject = "U staat op de wachtlijst voor Kamil";
 
-export function bevestigingAanmeldingHtml(naam: string): string {
+export function bevestigingAanmeldingHtml(naam: string, unsubscribeUrl: string): string {
 	return `<!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -43,9 +43,12 @@ export function bevestigingAanmeldingHtml(naam: string): string {
           <!-- Footer -->
           <tr>
             <td style="background:#f9f9f9;padding:20px 40px;text-align:center;border-top:1px solid #eeeeee;">
-              <p style="margin:0;font-size:12px;color:#aaaaaa;">
+              <p style="margin:0 0 12px;font-size:12px;color:#aaaaaa;">
                 &copy; ${new Date().getFullYear()} Kamil &mdash; Alle rechten voorbehouden
               </p>
+              <a href="${unsubscribeUrl}" style="font-size:12px;color:#aaaaaa;text-decoration:underline;">
+                Afmelden van de wachtlijst
+              </a>
             </td>
           </tr>
 
@@ -57,7 +60,7 @@ export function bevestigingAanmeldingHtml(naam: string): string {
 </html>`;
 }
 
-export function bevestigingAanmeldingText(naam: string): string {
+export function bevestigingAanmeldingText(naam: string, unsubscribeUrl: string): string {
 	return `Bedankt, ${naam}!
 
 U staat nu op de wachtlijst voor Kamil. Zodra we officieel live gaan, verwittigen we u als eerste.
@@ -67,6 +70,8 @@ Kamil herkent gevaarlijke websites en beschermt u onzichtbaar op de achtergrond 
 ---
 U ontvangt deze e-mail omdat u zich heeft ingeschreven op kamil-extension.be.
 We sturen u enkel een bericht wanneer Kamil beschikbaar is.
+
+Afmelden: ${unsubscribeUrl}
 
 © ${new Date().getFullYear()} Kamil`;
 }
