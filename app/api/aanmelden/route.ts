@@ -1,7 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
-import { bevestigingAanmelding, bevestigingAanmeldingSubject } from "@/lib/emails/bevestiging-aanmelding";
-import { notificatieAanmelding, notificatieAanmeldingSubject } from "@/lib/emails/notificatie-aanmelding";
+import {
+	bevestigingAanmeldingSubject,
+	bevestigingAanmeldingHtml,
+	bevestigingAanmeldingText,
+} from "@/lib/emails/bevestiging-aanmelding";
+import {
+	notificatieAanmeldingSubject,
+	notificatieAanmeldingHtml,
+	notificatieAanmeldingText,
+} from "@/lib/emails/notificatie-aanmelding";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -20,13 +28,15 @@ export async function POST(req: NextRequest) {
 			from,
 			to: email,
 			subject: bevestigingAanmeldingSubject,
-			html: bevestigingAanmelding(naam),
+			html: bevestigingAanmeldingHtml(naam),
+			text: bevestigingAanmeldingText(naam),
 		}),
 		resend.emails.send({
 			from,
 			to: notify,
 			subject: notificatieAanmeldingSubject(naam),
-			html: notificatieAanmelding(naam, email),
+			html: notificatieAanmeldingHtml(naam, email),
+			text: notificatieAanmeldingText(naam, email),
 		}),
 	]);
 
