@@ -21,7 +21,7 @@ export default function Header() {
 						</p>
 					</div>
 					<div>
-						<Button href="#">
+						<Button href="/aanmelden">
 							Bescherm mij gratis met Kamil
 						</Button>
 						<p className="mt-4 text-sm text-body-green/80 italic">* Gratis & Veilig!</p>

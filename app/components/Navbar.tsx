@@ -8,6 +8,7 @@ import Button from "./Button";
 const navLinks = [
 	{ name: "Home", href: "/" },
 	{ name: "Tips & Gids", href: "/tips-and-guides" },
+	{ name: "Aanmelden", href: "/aanmelden" },
 ];
 
 export default function Navbar() {
@@ -37,7 +38,7 @@ export default function Navbar() {
 						        {link.name}
 						    </NavLink>
 						))}
-						<Button href="#">
+						<Button href="/aanmelden">
 						    Surf veilig met Kamil
 						</Button>
 						</div>
@@ -67,8 +68,8 @@ export default function Navbar() {
 							</li>
 						))}
 						<li>
-						    <Button 
-						        href="#" 
+						    <Button
+						        href="/aanmelden"
 						        onClick={() => setIsOpen(false)}
 						        className="text-xl"
 						    >
