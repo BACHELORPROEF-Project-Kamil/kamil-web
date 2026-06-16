@@ -1,7 +1,7 @@
-import GuideHero from "../components/GuideHero";
-import GuideSteps from "../components/GuideSteps";
-import GuidesExplorer from "../components/GuidesExplorer";
-import { getAllGuides } from "../lib/guideLoader";
+import GuideHero from "@/app/components/GuideHero";
+import GuideSteps from "@/app/components/GuideSteps";
+import GuidesExplorer from "@/app/components/GuidesExplorer";
+import { getAllGuides } from "@/app/lib/guideLoader";
 
 export default async function TipsAndGuidesPage() {
     const guides = getAllGuides();

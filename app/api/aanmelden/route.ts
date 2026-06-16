@@ -1,0 +1,64 @@
+import { NextRequest, NextResponse } from "next/server";
+import { Resend } from "resend";
+import {
+	bevestigingAanmeldingSubject,
+	bevestigingAanmeldingHtml,
+	bevestigingAanmeldingText,
+} from "@/lib/emails/bevestiging-aanmelding";
+import {
+	notificatieAanmeldingSubject,
+	notificatieAanmeldingHtml,
+	notificatieAanmeldingText,
+} from "@/lib/emails/notificatie-aanmelding";
+
+export async function POST(req: NextRequest) {
+	const resend = new Resend(process.env.RESEND_API_KEY);
+	const { naam, email } = await req.json();
+
+	if (!naam || !email || !email.includes("@")) {
+		return NextResponse.json({ error: "Ongeldige gegevens." }, { status: 400 });
+	}
+
+	const from = process.env.RESEND_FROM!;
+	const notify = process.env.RESEND_NOTIFY!;
+
+	const [bevestiging, notificatie] = await Promise.allSettled([
+		resend.emails.send({
+			from,
+			to: email,
+			subject: bevestigingAanmeldingSubject,
+			html: bevestigingAanmeldingHtml(naam),
+			text: bevestigingAanmeldingText(naam),
+		}),
+		resend.emails.send({
+			from,
+			to: notify,
+			subject: notificatieAanmeldingSubject(naam),
+			html: notificatieAanmeldingHtml(naam, email),
+			text: notificatieAanmeldingText(naam, email),
+		}),
+	]);
+
+	if (bevestiging.status === "rejected") {
+		console.error("Bevestigingsmail mislukt:", bevestiging.reason);
+		return NextResponse.json({ error: "E-mail kon niet verstuurd worden." }, { status: 500 });
+	}
+
+	if (notificatie.status === "rejected") {
+		console.error("Notificatiemail mislukt:", notificatie.reason);
+	}
+
+	const [voornaam, ...rest] = naam.trim().split(" ");
+	const contactResult = await resend.contacts.create({
+		email,
+		firstName: voornaam,
+		lastName: rest.join(" ") || undefined,
+		unsubscribed: false,
+		segments: [{ id: process.env.RESEND_AUDIENCE_ID! }],
+	});
+	if (contactResult.error) {
+		console.error("Contact toevoegen mislukt:", contactResult.error);
+	}
+
+	return NextResponse.json({ ok: true });
+}
