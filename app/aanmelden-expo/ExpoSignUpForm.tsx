@@ -19,13 +19,10 @@ export default function ExpoSignUpForm() {
 	useEffect(() => {
 		if (status !== "success") return;
 
-		setCountdown(AUTO_RESET_SECONDS);
-
 		timerRef.current = setInterval(() => {
 			setCountdown((prev) => {
 				if (prev <= 1) {
 					clearInterval(timerRef.current!);
-					reset();
 					return 0;
 				}
 				return prev - 1;
@@ -34,6 +31,10 @@ export default function ExpoSignUpForm() {
 
 		return () => clearInterval(timerRef.current!);
 	}, [status]);
+
+	useEffect(() => {
+		if (countdown === 0) reset();
+	}, [countdown]);
 
 	async function handleSubmit(e: React.FormEvent) {
 		e.preventDefault();
@@ -66,6 +67,7 @@ export default function ExpoSignUpForm() {
 		setAkkoord(false);
 		setStatus("idle");
 		setFout("");
+		setCountdown(AUTO_RESET_SECONDS);
 	}
 
 	if (status === "success") {
