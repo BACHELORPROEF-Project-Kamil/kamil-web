@@ -24,7 +24,6 @@ export async function POST(req: NextRequest) {
 	const from = process.env.RESEND_FROM!;
 	const notify = process.env.RESEND_NOTIFY!;
 	const baseUrl = process.env.NEXT_PUBLIC_BASE_URL!;
-
 	const token = generateUnsubscribeToken(email);
 	const unsubscribeUrl = `${baseUrl}/afmelden?token=${token}`;
 
@@ -57,6 +56,15 @@ export async function POST(req: NextRequest) {
 	if (notificatie.status === "rejected") {
 		console.error("Notificatiemail mislukt:", notificatie.reason);
 	}
+
+	const [voornaam, ...rest] = naam.trim().split(" ");
+	await resend.contacts.create({
+		audienceId: process.env.RESEND_AUDIENCE_ID!,
+		email,
+		firstName: voornaam,
+		lastName: rest.join(" ") || undefined,
+		unsubscribed: false,
+	}).catch((err) => console.error("Contact toevoegen mislukt:", err));
 
 	return NextResponse.json({ ok: true });
 }

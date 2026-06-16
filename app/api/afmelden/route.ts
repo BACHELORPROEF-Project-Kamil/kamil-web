@@ -22,6 +22,9 @@ export async function GET(req: NextRequest) {
 		return NextResponse.redirect(new URL("/afmelden?status=ongeldig", req.url));
 	}
 
+	await resend.contacts.remove({ audienceId: process.env.RESEND_AUDIENCE_ID!, email })
+		.catch((err) => console.error("Contact verwijderen mislukt:", err));
+
 	await resend.emails.send({
 		from: process.env.RESEND_FROM!,
 		to: process.env.RESEND_NOTIFY!,
