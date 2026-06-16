@@ -58,13 +58,16 @@ export async function POST(req: NextRequest) {
 	}
 
 	const [voornaam, ...rest] = naam.trim().split(" ");
-	await resend.contacts.create({
-		audienceId: process.env.RESEND_AUDIENCE_ID!,
+	const contactResult = await resend.contacts.create({
 		email,
 		firstName: voornaam,
 		lastName: rest.join(" ") || undefined,
 		unsubscribed: false,
-	}).catch((err) => console.error("Contact toevoegen mislukt:", err));
+		segments: [{ id: process.env.RESEND_AUDIENCE_ID! }],
+	});
+	if (contactResult.error) {
+		console.error("Contact toevoegen mislukt:", contactResult.error);
+	}
 
 	return NextResponse.json({ ok: true });
 }
