@@ -7,9 +7,8 @@ import {
 	notificatieAfmeldingText,
 } from "@/lib/emails/notificatie-afmelding";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function GET(req: NextRequest) {
+	const resend = new Resend(process.env.RESEND_API_KEY);
 	const token = req.nextUrl.searchParams.get("token");
 
 	if (!token) {
