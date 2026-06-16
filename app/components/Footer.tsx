@@ -62,10 +62,10 @@ export default function Footer() {
 				<div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-center md:text-left">
 					<p>© {new Date().getFullYear()} Kamil. Alle rechten voorbehouden.</p>
 					<div className="flex gap-8">
-						<Link href="#" className="hover:text-accent-orange transition-colors">
+						<Link href="/privacybeleid" className="hover:text-accent-orange transition-colors">
 							Privacybeleid
 						</Link>
-						<Link href="#" className="hover:text-accent-orange transition-colors">
+						<Link href="/algemene-voorwaarden" className="hover:text-accent-orange transition-colors">
 							Algemene voorwaarden
 						</Link>
 					</div>

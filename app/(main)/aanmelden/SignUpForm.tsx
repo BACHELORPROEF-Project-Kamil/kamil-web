@@ -1,12 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 type Status = "idle" | "loading" | "success" | "error";
 
 export default function SignUpForm() {
 	const [naam, setNaam] = useState("");
 	const [email, setEmail] = useState("");
+	const [akkoord, setAkkoord] = useState(false);
 	const [status, setStatus] = useState<Status>("idle");
 	const [fout, setFout] = useState("");
 
@@ -78,13 +80,34 @@ export default function SignUpForm() {
 				/>
 			</div>
 
+			<label className="flex items-start gap-3 cursor-pointer group">
+				<input
+					type="checkbox"
+					required
+					checked={akkoord}
+					onChange={(e) => setAkkoord(e.target.checked)}
+					className="mt-1 w-5 h-5 flex-shrink-0 accent-accent-green cursor-pointer"
+				/>
+				<span className="text-sm text-body-green leading-snug">
+					Ik ga akkoord met de{" "}
+					<Link href="/algemene-voorwaarden" target="_blank" className="underline underline-offset-2 hover:text-accent-orange transition-colors">
+						algemene voorwaarden
+					</Link>{" "}
+					en het{" "}
+					<Link href="/privacybeleid" target="_blank" className="underline underline-offset-2 hover:text-accent-orange transition-colors">
+						privacybeleid
+					</Link>
+					.
+				</span>
+			</label>
+
 			{status === "error" && (
 				<p className="text-red-600 text-sm">{fout}</p>
 			)}
 
 			<button
 				type="submit"
-				disabled={status === "loading"}
+				disabled={status === "loading" || !akkoord}
 				className="w-full px-8 py-4 rounded-full bg-accent-orange text-white font-body-bold text-lg transition-all hover:opacity-90 disabled:opacity-60 disabled:cursor-not-allowed"
 			>
 				{status === "loading" ? "Bezig…" : "Verwittigt mij wanneer Kamil live gaat"}
